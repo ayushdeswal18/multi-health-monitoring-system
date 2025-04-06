@@ -1,0 +1,109 @@
+/* Premium Website Animations */
+
+/* Particle Animation */
+@keyframes particleFloat {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    50% {
+        transform: translate(20px, -20px) rotate(180deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(360deg);
+    }
+}
+
+/* Geometric Heart Animation */
+@keyframes heartPulse {
+    0% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.5));
+    }
+    50% {
+        transform: scale(1.1);
+        filter: drop-shadow(0 0 20px rgba(255, 0, 0, 0.8));
+    }
+    100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.5));
+    }
+}
+
+/* Parallax Scroll Effect */
+.parallax-section {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.parallax-layer {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* HUD Interface Animation */
+@keyframes hudRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes hudPulse {
+    0% { opacity: 0.5; transform: scale(0.95); }
+    50% { opacity: 1; transform: scale(1.05); }
+    100% { opacity: 0.5; transform: scale(0.95); }
+}
+
+/* Geometric Pattern Animation */
+@keyframes patternFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Apply Premium Animations */
+.geometric-heart {
+    animation: heartPulse 2s infinite;
+}
+
+.particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    animation: particleFloat 8s infinite;
+}
+
+.hud-element {
+    animation: hudRotate 20s linear infinite;
+}
+
+.hud-indicator {
+    animation: hudPulse 2s ease-in-out infinite;
+}
+
+.geometric-pattern {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    background-size: 200% 200%;
+    animation: patternFlow 10s ease infinite;
+}
+
+/* Premium Hover Effects */
+.premium-card {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.premium-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Smooth Section Transitions */
+.section-transition {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.section-transition.visible {
+    opacity: 1;
+    transform: translateY(0);
+}

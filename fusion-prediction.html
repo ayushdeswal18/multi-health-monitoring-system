@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fusion Model Prediction - Health Prediction System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="prediction.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">HealthPredict</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="datasets.html">Datasets</a></li>
+            <li><a href="visualization.html">Visualization</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="prediction-container">
+        <h1>Advanced Fusion Model Prediction</h1>
+        
+        <div class="prediction-content">
+            <div class="prediction-info">
+                <h2>About This Test</h2>
+                <p>This advanced prediction model combines both clinical data and retinal imaging analysis to provide a more comprehensive diabetes risk assessment. The fusion model integrates multiple data sources for improved accuracy.</p>
+                
+                <div class="accuracy-info">
+                    <h3>Model Performance</h3>
+                    <div class="accuracy-metric">
+                        <span class="metric-label">Accuracy:</span>
+                        <span class="metric-value">80.0%</span>
+                    </div>
+                </div>
+
+                <div class="guidelines">
+                    <h3>Image Guidelines</h3>
+                    <ul>
+                        <li>Use clear, high-resolution retinal images</li>
+                        <li>Ensure proper lighting and focus</li>
+                        <li>Supported formats: JPG, PNG</li>
+                        <li>Maximum file size: 5MB</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="fusion-prediction-form">
+                <div class="form-section clinical-data">
+                    <h3>Clinical Data</h3>
+                    <form id="clinicalDataForm">
+                        <div class="form-group">
+                            <label for="pregnancies">Number of Pregnancies</label>
+                            <input type="number" id="pregnancies" name="pregnancies" min="0" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="glucose">Glucose Level (mg/dL)</label>
+                            <input type="number" id="glucose" name="glucose" min="0" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="bloodPressure">Blood Pressure (mm Hg)</label>
+                            <input type="number" id="bloodPressure" name="bloodPressure" min="0" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="skinThickness">Skin Thickness (mm)</label>
+                            <input type="number" id="skinThickness" name="skinThickness" min="0" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="insulin">Insulin Level (μU/mL)</label>
+                            <input type="number" id="insulin" name="insulin" min="0" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="bmi">BMI (kg/m²)</label>
+                            <input type="number" id="bmi" name="bmi" min="0" step="0.1" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="diabetesPedigree">Diabetes Pedigree Function</label>
+                            <input type="number" id="diabetesPedigree" name="diabetesPedigree" min="0" step="0.001" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="age">Age (years)</label>
+                            <input type="number" id="age" name="age" min="0" required>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="form-section retinal-image">
+                    <h3>Retinal Image</h3>
+                    <div class="file-upload" id="dropZone">
+                        <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="17 8 12 3 7 8"/>
+                            <line x1="12" y1="3" x2="12" y2="15"/>
+                        </svg>
+                        <p>Drag and drop your retinal image here<br>or click to browse</p>
+                        <input type="file" id="imageUpload" accept="image/*" hidden>
+                    </div>
+
+                    <div id="imagePreview" class="image-preview" style="display: none;">
+                        <img id="uploadedImage" src="" alt="Uploaded retinal image">
+                    </div>
+                </div>
+
+                <button type="button" class="predict-btn" id="fusionPredictBtn">Generate Prediction</button>
+            </div>
+
+            <div id="predictionResult" class="prediction-result" style="display: none;">
+                <h3>Fusion Model Prediction</h3>
+                <div class="result-content">
+                    <div class="result-icon"></div>
+                    <p class="result-text"></p>
+                    <div class="confidence-score">
+                        <h4>Confidence Score</h4>
+                        <div class="confidence-bar">
+                            <div class="confidence-progress"></div>
+                        </div>
+                        <p class="confidence-value"></p>
+                    </div>
+                    <div class="feature-importance">
+                        <h4>Feature Importance</h4>
+                        <div class="importance-chart"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Akshay Tiwari. All rights reserved.</p>
+    </footer>
+
+    <script src="fusion-prediction.js"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+/* Geometric Heart Background */
+.geometric-heart-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.15;
+    pointer-events: none;
+}
+
+.heart-node {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    filter: drop-shadow(0 0 5px var(--accent-color));
+    animation: nodePulse 2s infinite;
+}
+
+.heart-connection {
+    position: absolute;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-color), transparent);
+    transform-origin: left center;
+    animation: connectionGlow 3s infinite;
+}
+
+/* Diabetes HUD Interface */
+.hud-interface-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.hud-circle {
+    position: absolute;
+    border: 2px solid var(--secondary-color);
+    border-radius: 50%;
+    animation: hudRotate 20s linear infinite;
+}
+
+.hud-data {
+    position: absolute;
+    font-family: 'Courier New', monospace;
+    color: var(--secondary-color);
+    font-size: 12px;
+    opacity: 0.8;
+    animation: dataFlicker 2s infinite;
+}
+
+/* Particle Effects */
+.particles-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -3;
+    pointer-events: none;
+}
+
+/* Animations */
+@keyframes nodePulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 1;
+    }
+}
+
+@keyframes connectionGlow {
+    0%, 100% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
+
+@keyframes dataFlicker {
+    0%, 100% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .geometric-heart-bg,
+    .hud-interface-bg {
+        opacity: 0.08;
+    }
+}

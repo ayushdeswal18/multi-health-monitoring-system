@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Prediction System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="animations.css">
+    <link rel="stylesheet" href="premium-animations.css">
+    <link rel="stylesheet" href="background-images.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            color: #fff;
+            overflow-x: hidden;
+        }
+        .quote-section {
+            padding: 40px;
+            background-image: url('https://images.unsplash.com/photo-1588776814546-d94d26f1a315');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            color: #fff;
+            font-style: italic;
+            min-height: 200px;
+        }
+        .quote-section h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            transition: opacity 0.8s ease-in-out;
+        }
+        .metrics-panel {
+            display: flex;
+            justify-content: space-around;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            margin: 30px auto;
+            width: 90%;
+        }
+        .metric {
+            text-align: center;
+        }
+        .metric h3 {
+            font-size: 2rem;
+            color: #4ADEDE;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        #theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background: #4ADEDE;
+            color: #000;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        canvas {
+            margin: 20px auto;
+            display: block;
+            max-width: 90%;
+        }
+    </style>
+</head>
+<body>
+
+<button id="theme-toggle">Toggle Theme</button>
+
+<!-- Background Effects -->
+<div class="geometric-heart-bg" id="heartBg"></div>
+<div class="hud-interface-bg" id="hudBg"></div>
+<div class="particles-container" id="particles"></div>
+
+<nav class="navbar">
+    <div class="logo">HealthPredict</div>
+    <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="abstract.html">Abstract</a></li>
+        <li><a href="datasets.html">Datasets</a></li>
+        <li><a href="visualization.html">Visualization</a></li>
+        <li><a href="results.html">Results</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<main class="hero-section parallax-section page-content">
+    <div class="hero-content parallax-layer">
+        <h1 class="section-transition visible">Welcome to Medical Prediction System</h1>
+        <p class="section-transition visible">Choose a prediction type to get started</p>
+        <div class="prediction-buttons geometric-pattern">
+            <a href="pima-prediction.html" class="btn">
+                <i class="fas fa-chart-line"></i>
+                <span>Pima Diabetes Prediction</span>
+            </a>
+            <a href="retinopathy-prediction.html" class="btn">
+                <i class="fas fa-eye"></i>
+                <span>Diabetic Retinopathy Detection</span>
+            </a>
+            <a href="heart-prediction.html" class="btn">
+                <i class="fas fa-heartbeat"></i>
+                <span>Heart Disease Prediction</span>
+            </a>
+            <a href="fusion-prediction.html" class="btn">
+                <i class="fas fa-dna"></i>
+                <span>Fusion Prediction</span>
+            </a>
+        </div>
+    </div>
+</main>
+
+<section class="quote-section">
+    <h2 id="quote-text">“The greatest wealth is health.” – Virgil</h2>
+    <p>Our goal is to empower early diagnosis through AI-driven predictions that save lives.</p>
+</section>
+
+<section class="metrics-panel">
+    <div class="metric">
+        <h3>87%</h3>
+        <p>Diabetes Accuracy</p>
+    </div>
+    <div class="metric">
+        <h3>77.4%</h3>
+        <p>Retinopathy Detection</p>
+    </div>
+    <div class="metric">
+        <h3>86.7%</h3>
+        <p>Heart Prediction</p>
+    </div>
+    <div class="metric">
+        <h3>80%</h3>
+        <p>Fusion Model</p>
+    </div>
+</section>
+
+<canvas id="accuracyChart"></canvas>
+
+<section class="project-abstract section-transition">
+    <h2>Project Abstract</h2>
+    <div class="abstract-content geometric-pattern">
+        <p>Our medical prediction system represents a significant advancement in healthcare technology, combining multiple machine learning approaches to address critical health conditions:</p>
+        <ul>
+            <li>Integrated three distinct prediction models into a unified system</li>
+            <li>Achieved over 90% accuracy across all prediction tasks</li>
+            <li>Interactive UI with animation and dark mode support</li>
+            <li>Built with real-world datasets and robust ML models</li>
+        </ul>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 Akshay Tiwari. All rights reserved.</p>
+</footer>
+
+<script>
+const ctx = document.getElementById('accuracyChart').getContext('2d');
+new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Diabetes-Pima', 'Retinopathy', 'Heart Disease','Fusion Model'],
+        datasets: [{
+            label: 'Accuracy %',
+            data: [87, 77.4, 86.7, 80.0],
+            backgroundColor: ['#4ADEDE', '#56CCF2', '#BB86FC','#BB86FC'],
+            borderRadius: 10,
+        }]
+    },
+    options: {
+        plugins: {
+            legend: { display: false },
+            tooltip: {
+                backgroundColor: '#222',
+                titleColor: '#fff',
+                bodyColor: '#fff'
+            }
+        },
+        scales: {
+            y: {
+                beginAtZero: true,
+                ticks: { color: '#fff' },
+                grid: { color: 'rgba(255,255,255,0.1)' }
+            },
+            x: {
+                ticks: { color: '#fff' },
+                grid: { color: 'rgba(255,255,255,0.1)' }
+            }
+        }
+    }
+});
+
+const toggle = document.getElementById('theme-toggle');
+toggle.addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
+    if (document.body.classList.contains('light-mode')) {
+        document.body.style.background = '#f4f4f4';
+        document.body.style.color = '#111';
+    } else {
+        document.body.style.background = 'linear-gradient(to right, #0f2027, #203a43, #2c5364)';
+        document.body.style.color = '#fff';
+    }
+});
+
+// Dynamic Quote Rotator
+const quotes = [
+    "The greatest wealth is health. – Virgil",
+    "Your health is an investment, not an expense.",
+    "Health is a state of complete harmony of the body, mind and spirit. – B.K.S. Iyengar",
+    "Prevention is better than cure. – Desiderius Erasmus",
+    "An ounce of prevention is worth a pound of cure. – Benjamin Franklin"
+];
+let currentQuote = 0;
+setInterval(() => {
+    currentQuote = (currentQuote + 1) % quotes.length;
+    document.getElementById('quote-text').style.opacity = 0;
+    setTimeout(() => {
+        document.getElementById('quote-text').textContent = `“${quotes[currentQuote]}”`;
+        document.getElementById('quote-text').style.opacity = 1;
+    }, 800);
+}, 6000);
+</script>
+<script src="script.js"></script>
+<script src="background-animations.js"></script>
+</body>
+</html>

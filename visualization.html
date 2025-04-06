@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Visualization - Health Prediction System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="visualization.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">HealthPredict</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="datasets.html">Datasets</a></li>
+            <li><a href="visualization.html" class="active">Visualization</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="visualization-container">
+        <h1>Data Insights & Visualization</h1>
+
+        <section class="visualization-section">
+            <h2>Pima Indian Diabetes Dataset Analysis</h2>
+            <div class="chart-container">
+                <div class="chart-wrapper">
+                    <canvas id="pimaDiabetesChart"></canvas>
+                </div>
+                <div class="chart-info">
+                    <h3>Model Performance</h3>
+                    <div class="metrics">
+                        <div class="metric-card">
+                            <h4>Accuracy</h4>
+                            <p class="metric-value">87.0%</p>
+                        </div>
+                        <div class="metric-card">
+                            <h4>Precision</h4>
+                            <p class="metric-value">83.6%</p>
+                        </div>
+                        <div class="metric-card">
+                            <h4>Recall</h4>
+                            <p class="metric-value">93.4%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="visualization-section">
+            <h2>Diabetic Retinopathy Classification Results</h2>
+            <div class="chart-container">
+                <div class="chart-wrapper">
+                    <canvas id="retinopathyChart"></canvas>
+                </div>
+                <div class="chart-info">
+                    <h3>Classification Performance</h3>
+                    <div class="metrics">
+                        <div class="metric-card">
+                            <h4>Accuracy</h4>
+                            <p class="metric-value">77.4%</p>
+                        </div>
+                        <div class="metric-card">
+                            <h4>Sensitivity</h4>
+                            <p class="metric-value">73.5%</p>
+                        </div>
+                        <div class="metric-card">
+                            <h4>Specificity</h4>
+                            <p class="metric-value">91.4%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="visualization-section">
+            <h2>Heart Disease Prediction Analysis</h2>
+            <div class="chart-container">
+                <div class="chart-wrapper">
+                    <canvas id="heartDiseaseChart"></canvas>
+                </div>
+                <div class="chart-info">
+                    <h3>Model Performance</h3>
+                    <div class="metrics">
+                        <div class="metric-card">
+                            <h4>Accuracy</h4>
+                            <p class="metric-value">86.7%</p>
+                        </div>
+                        <div class="metric-card">
+                            <h4>Precision</h4>
+                            <p class="metric-value">83.3%</p>
+                        </div>
+                        <div class="metric-card">
+                            <h4>Recall</h4>
+                            <p class="metric-value">83.3%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="visualization-section">
+            <h2>Fusion Model Analysis</h2>
+            <div class="chart-container">
+                <div class="chart-wrapper">
+                    <canvas id="fusionModelChart" width="400" height="200"></canvas>
+
+                </div>
+                <div class="chart-info">
+                    <h3>Combined Model Performance</h3>
+                    <div class="metrics">
+                        <div class="metric-card">
+                            <h4>Accuracy</h4>
+                            <p class="metric-value">80.0%</p>
+                        </div>
+                        <div class="metric-card">
+                            <h4>Precision</h4>
+                            <p class="metric-value">74.9%</p>
+                        </div>
+                        <div class="metric-card">
+                            <h4>Recall</h4>
+                            <p class="metric-value">74.5%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="visualization-section">
+            <h2>About This Project</h2>
+            <div class="project-description">
+                <h3>📂 Datasets Used</h3>
+                <ul>
+                    <li><strong>PIMA Indian Diabetes Dataset</strong> – Binary classification of diabetes based on Glucose, BMI, Blood Pressure, Age, etc. <br><em>Source: UCI / Kaggle</em></li>
+                    <li><strong>Diabetic Retinopathy Dataset</strong> – Classification of diabetic eye disease into No DR, Mild, Moderate, Severe, and Proliferative stages. <br><em>Source: Kaggle</em></li>
+                    <li><strong>Heart Disease Dataset</strong> – Heart risk prediction using age, cholesterol, chest pain, fasting sugar, etc. <br><em>Source: Cleveland UCI</em></li>
+                    <li><strong>Fusion Dataset</strong> – Combined clinical and retinal image data for enhanced prediction accuracy. <br><em>Source: Integrated from multiple sources</em></li>
+                </ul>
+        
+                <h3>🧠 Project Review</h3>
+                <p>
+                    This project visualizes health prediction results using real-world datasets. Each chart shows model performance or medical data distribution for better understanding and diagnosis support.
+                </p>
+        
+                <h4>✅ Strengths:</h4>
+                <ul>
+                    <li>Clean UI with Chart.js integration</li>
+                    <li>Bar, Pie, and Line Charts for varied insights</li>
+                    <li>Responsive design with metric cards</li>
+                    <li>Easy to expand and modular code</li>
+                </ul>
+        
+                <h4>🚀 Suggestions for Future Improvement:</h4>
+                <ul>
+                    <li>Interactive filters and real-time prediction input</li>
+                    <li>Display confusion matrices or feature importance</li>
+                    <li>Showcase model training details (algorithm, time, F1 score, etc.)</li>
+                </ul>
+            </div>
+        </section>
+        
+    </main>
+
+    <footer>
+        <p>&copy; © 2025 Akshay Tiwari. All rights reserved.</p>
+    </footer>
+
+    <script src="visualization.js"></script>
+</body>
+</html>

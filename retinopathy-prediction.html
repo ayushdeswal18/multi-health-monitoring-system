@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetic Retinopathy Detection - Health Prediction System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="prediction.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">HealthPredict</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="datasets.html">Datasets</a></li>
+            <li><a href="visualization.html">Visualization</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="prediction-container">
+        <h1>Diabetic Retinopathy Detection</h1>
+        
+        <div class="prediction-content">
+            <div class="prediction-info">
+                <h2>About This Test</h2>
+                <p>Upload a high-quality retinal image to detect and classify the severity of diabetic retinopathy. Our advanced AI model will analyze the image and provide a detailed assessment.</p>
+                
+                <div class="accuracy-info">
+                    <h3>Model Performance</h3>
+                    <div class="accuracy-metric">
+                        <span class="metric-label">Accuracy:</span>
+                        <span class="metric-value">77.4%</span>
+                    </div>
+                </div>
+
+                <div class="guidelines">
+                    <h3>Image Guidelines</h3>
+                    <ul>
+                        <li>Use clear, high-resolution retinal images</li>
+                        <li>Ensure proper lighting and focus</li>
+                        <li>Supported formats: JPG, PNG</li>
+                        <li>Maximum file size: 5MB</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="prediction-form">
+                <div class="file-upload" id="dropZone">
+                    <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                        <polyline points="17 8 12 3 7 8"/>
+                        <line x1="12" y1="3" x2="12" y2="15"/>
+                    </svg>
+                    <p>Drag and drop your retinal image here<br>or click to browse</p>
+                    <input type="file" id="imageUpload" accept="image/*" hidden>
+                </div>
+
+                <div id="imagePreview" class="image-preview" style="display: none;">
+                    <img id="uploadedImage" src="" alt="Uploaded retinal image">
+                    <button type="button" class="predict-btn" id="analyzeButton">Analyze Image</button>
+                </div>
+            </div>
+
+            <div id="predictionResult" class="prediction-result" style="display: none;">
+                <h3>Detection Result</h3>
+                <div class="result-content">
+                    <div class="result-severity"></div>
+                    <p class="result-text"></p>
+                    <div class="severity-details">
+                        <h4>Severity Level</h4>
+                        <div class="severity-bar">
+                            <div class="severity-progress"></div>
+                        </div>
+                        <p class="severity-description"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Akshay Tiwari. All rights reserved.</p>
+    </footer>
+
+    <script src="retinopathy-prediction.js"></script>
+</body>
+</html>

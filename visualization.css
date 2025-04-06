@@ -1,0 +1,139 @@
+.visualization-container {
+    padding: 8rem 5% 4rem;
+    min-height: 100vh;
+    background-color: var(--background-color);
+}
+
+.visualization-container h1 {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.visualization-section {
+    background-color: white;
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.visualization-section h2 {
+    color: var(--secondary-color);
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+.chart-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.chart-wrapper {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.chart-info {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 10px;
+}
+
+.chart-info h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+}
+
+.metrics {
+    display: grid;
+    gap: 1rem;
+}
+
+.metric-card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.metric-card:hover {
+    transform: translateY(-3px);
+}
+
+.metric-card h4 {
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.metric-value {
+    color: var(--secondary-color);
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .chart-container {
+        grid-template-columns: 1fr;
+    }
+
+    .chart-wrapper {
+        min-height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .visualization-container {
+        padding-top: 6rem;
+    }
+
+    .visualization-section {
+        padding: 1.5rem;
+    }
+
+    .visualization-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .metrics {
+        grid-template-columns: 1fr;
+    }
+
+}
+.project-description {
+    background-color: #f9f9f9;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin-top: 2rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.project-description h3,
+.project-description h4 {
+    margin-top: 1.2rem;
+    color: #2c3e50;
+}
+
+.project-description ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+    list-style: disc;
+    color: #34495e;
+}
+
+.project-description p {
+    line-height: 1.6;
+    margin-top: 0.5rem;
+    color: #555;
+}

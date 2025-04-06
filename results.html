@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Prediction Results - Medical Prediction System</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="premium-animations.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f5f7fa;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    .navbar {
+      background: #003366;
+      padding: 1rem 2rem;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links li a:hover,
+    .nav-links li a.active {
+      color: #00c6ff;
+    }
+
+    .hero-section {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: linear-gradient(to right, #00c6ff, #0072ff);
+      color: white;
+    }
+
+    .hero-section h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-section p {
+      font-size: 1.2rem;
+      color: #e3f2fd;
+    }
+
+    section.model-section {
+      padding: 3rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    section.model-section h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: #003366;
+      text-align: center;
+    }
+
+    .image-block {
+      margin-bottom: 2rem;
+    }
+
+    .image-block h4 {
+      margin: 0.5rem 0;
+      font-size: 1.1rem;
+    }
+
+    .image-block img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+      margin-bottom: 1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: #003366;
+      color: #fff;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">HealthPredict</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="datasets.html">Datasets</a></li>
+      <li><a href="visualization.html">Visualization</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="results.html" class="active">Results</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="hero-section">
+      <h1>Comprehensive Prediction Results</h1>
+      <p>Visual analysis of our deep learning & ML models across medical datasets</p>
+    </section>
+
+    <!-- PIMA -->
+    <section class="model-section">
+      <h2><i class="fas fa-syringe"></i> PIMA Diabetes Prediction</h2>
+      <div class="image-block">
+        <h4>Dataset Description</h4>
+        <img src="image/2_pima_description.jpg" alt="PIMA Dataset Description">
+      </div>
+      <div class="image-block">
+        <h4>Confusion Matrix</h4>
+        <img src="image/pima conf matrix.jpg" alt="PIMA Confusion Matrix">
+      </div>
+      <div class="image-block">
+        <h4>Correlation Matrix</h4>
+        <img src="image/pima correlation.jpg" alt="PIMA Correlation Matrix">
+      </div>
+      <div class="image-block">
+        <h4>Glucose Level by Age Group</h4>
+        <img src="image/pima glucose level.jpg" alt="PIMA Glucose by Age">
+      </div>
+    </section>
+
+    <!-- Retinopathy -->
+    <section class="model-section">
+      <h2><i class="fas fa-eye"></i> Diabetic Retinopathy Detection</h2>
+      <div class="image-block">
+        <h4>Confusion Matrix</h4>
+        <img src="image/conf matrx ret.png" alt="Retinopathy Confusion Matrix">
+      </div>
+      <div class="image-block">
+        <h4>Intensity Distribution</h4>
+        <img src="image/ret intensity distrib.jpg" alt="Retinopathy Intensity Distribution">
+      </div>
+      <div class="image-block">
+        <h4>Model Summary</h4>
+        <img src="image/ret model summary.jpg" alt="Retinopathy Model Summary">
+      </div>
+      <div class="image-block">
+        <h4>Sample Images</h4>
+        <img src="image/ret sample images.jpg" alt="Retinopathy Samples">
+      </div>
+      <div class="image-block">
+        <h4>Training & Testing Accuracy</h4>
+        <img src="image/train test ret.png" alt="Retinopathy Accuracy">
+      </div>
+    </section>
+
+    <!-- Heart -->
+    <section class="model-section">
+      <h2><i class="fas fa-heartbeat"></i> Heart Disease Prediction</h2>
+      <div class="image-block">
+        <h4>Confusion Matrix</h4>
+        <img src="image/heart conf matrix.jpg" alt="Heart Confusion Matrix">
+      </div>
+      <div class="image-block">
+        <h4>Prediction Result</h4>
+        <img src="image/result heart.jpg" alt="Heart Disease Prediction Result">
+      </div>
+    </section>
+
+    <!-- Fusion -->
+    <section class="model-section">
+      <h2><i class="fas fa-dna"></i> Fusion Model Analysis</h2>
+      <div class="image-block">
+        <h4>Fusion Model Confusion Matrix</h4>
+        <img src="image/fused conf matrix.jpg" alt="Fusion Confusion Matrix">
+      </div>
+      <div class="image-block">
+        <h4>Training & Testing Accuracy</h4>
+        <img src="image/fusion train, loss acc.jpg" alt="Fusion Training Accuracy">
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Akshay Tiwari. All rights reserved.</p>
+  </footer>
+</body>
+</html>

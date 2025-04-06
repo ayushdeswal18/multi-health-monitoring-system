@@ -1,0 +1,260 @@
+.prediction-container {
+    padding: 8rem 5% 4rem;
+    min-height: 100vh;
+    background: linear-gradient(135deg, rgba(44, 62, 80, 0.05), rgba(52, 152, 219, 0.1));
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.prediction-container h1 {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.prediction-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    gap: 2rem;
+}
+
+/* Prediction Info Styles */
+.prediction-info {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.prediction-info:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(31, 38, 135, 0.2);
+}
+
+.prediction-info h2 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.prediction-info p {
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.accuracy-info {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 10px;
+}
+
+.accuracy-info h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.accuracy-metric {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.metric-label {
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.metric-value {
+    color: var(--secondary-color);
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+/* Prediction Form Styles */
+.prediction-form {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+    transition: all 0.3s ease;
+}
+
+.prediction-form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(31, 38, 135, 0.2);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+}
+
+.predict-btn {
+    background: linear-gradient(135deg, var(--accent-color), #c0392b);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.predict-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: 0.5s;
+}
+
+.predict-btn:hover::before {
+    left: 100%;
+}
+
+.predict-btn:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+}
+
+/* Prediction Result Styles */
+.prediction-result {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+    text-align: center;
+    animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.prediction-result h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.result-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.result-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.result-icon.positive {
+    background-color: #e74c3c;
+}
+
+.result-icon.negative {
+    background-color: #2ecc71;
+}
+
+.result-text {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.result-probability {
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+}
+
+/* File Upload Styles */
+.file-upload {
+    border: 2px dashed #e0e0e0;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.file-upload:hover {
+    border-color: var(--secondary-color);
+}
+
+.file-upload input[type="file"] {
+    display: none;
+}
+
+.upload-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .prediction-container {
+        padding-top: 6rem;
+    }
+
+    .prediction-container h1 {
+        font-size: 2rem;
+    }
+
+    .prediction-info,
+    .prediction-form,
+    .prediction-result {
+        padding: 1.5rem;
+    }
+}
